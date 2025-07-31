@@ -1,0 +1,35 @@
+<div class="card" [ngClass]="accentColor">
+  <ng-container *ngIf="showHeader">
+    <div class="card__header" [ngClass]="headerSize">
+      <ng-content select="[card-title]"></ng-content>
+      <button aria-label="More options" class="card__ellipsis" (click)="onEllipsis()">
+        <!-- Inline SVG icon -->
+        <svg ...>…</svg>
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="showImage">
+    <div class="card__image">
+      <ng-content select="[card-image]"></ng-content>
+    </div>
+  </ng-container>
+
+  <div class="card__body">
+    <ng-content></ng-content>
+  </div>
+
+  <ng-container *ngIf="showFooter">
+    <div class="card__footer">
+      <ng-container *ngFor="let action of actions">
+        <button
+          [class.left]="action.position === 'left'"
+          [class.right]="action.position === 'right'"
+          [disabled]="action.loading"
+          (click)="action.callback()">
+          {{ action.loading ? 'Loading...' : action.label }}
+        </button>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>
