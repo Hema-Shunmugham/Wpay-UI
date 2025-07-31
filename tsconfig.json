@@ -3,6 +3,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "card": [
+        "./dist/card"
+      ],
+      "@wpay-ui/card": ["projects/card/src/public-api.ts"]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -29,6 +36,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/card/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/card/tsconfig.spec.json"
     }
   ]
 }
