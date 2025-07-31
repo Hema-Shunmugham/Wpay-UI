@@ -1,0 +1,27 @@
+<article class="card" [class.with-accent]="accentColor">
+  <!-- Header -->
+  <header class="card__header"
+    [ngClass]="'card__header--' + headerSize"
+    *ngIf="showHeader">
+    <span class="card__title">{{ headerText }}</span>
+    <!-- Vertical ellipsis icon -->
+    <button class="card__menu-btn" aria-label="More options">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+    </button>
+  </header>
+  <div class="card__divider" *ngIf="showHeader"></div>
+  <!-- Optional Image Slot -->
+  <div *ngIf="showImage" class="card__image">
+    <img src="assets/card/LOGO-LIGHT.svg" alt="Logo">
+  </div>
+  <!-- Body -->
+  <section class="card__body">
+     <!-- Here’s some dynamic body text.-->
+  </section>
+  <div class="card__divider" *ngIf="showFooter"></div>
+  <!-- Footer -->
+  <footer class="card__footer" *ngIf="showFooter">
+    <button class="card__btn cancel" (click)="actionCancel.emit()">Cancel</button>
+    <button class="card__btn save"   (click)="actionSave.emit()">Save</button>
+  </footer>
+</article>
