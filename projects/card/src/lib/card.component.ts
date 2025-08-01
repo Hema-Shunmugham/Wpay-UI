@@ -13,7 +13,6 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'wpay-card',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
