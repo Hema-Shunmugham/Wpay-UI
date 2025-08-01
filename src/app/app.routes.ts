@@ -75,7 +75,7 @@ export const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('@wpay-ui/card').then(m => m.CardModule),
-    data: { accentColor: '#084D63', headerSize: 'small', showHeader:  true,  showImage: true, showFooter: true }
+    data: { accentColor: '#084D63', headerSize: 'medium', showHeader:  true,  showImage: true, showFooter: true }
   },
 ];
 

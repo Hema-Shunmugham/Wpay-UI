@@ -3,10 +3,8 @@ import {
   Input,
   Output,
   EventEmitter,
-  ElementRef,
-  OnChanges,
+  HostBinding,
   OnInit,
-  SimpleChanges
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
@@ -16,19 +14,12 @@ import { ActivatedRoute } from '@angular/router';
   imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
-  host: {
-    '[style.--card-accent]': 'accentColor || "#084D63"'
-  }
 })
-export class CardComponent implements OnChanges, OnInit {
+export class CardComponent implements OnInit {
   /** Header text */
   @Input() headerText = 'Wpay';
-
-  /** 'small' | 'medium' | 'large' */
-  @Input() headerSize: 'small' | 'medium' | 'large' = 'medium';
-
-  /** Any valid CSS color */
-  @Input() accentColor = '#084D63';
+  @Input() headerSize = '';
+  @Input() accentColor = '';
   @Input() showHeader = true;
   @Input() showImage = true;
   @Input() showFooter = true;
@@ -38,15 +29,11 @@ export class CardComponent implements OnChanges, OnInit {
 
   private readonly defaultAccent = '#084D63';
 
-  constructor(
-    private el: ElementRef<HTMLElement>,
-    private route: ActivatedRoute // Inject ActivatedRoute here
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
-  // Handle input changes
-  ngOnChanges(changes: SimpleChanges): void {
-    const accent = this.accentColor || this.defaultAccent;
-    this.el.nativeElement.style.setProperty('--card-accent', accent);
+  @HostBinding('style.--card-accent')
+  get cardAccent() {
+    return this.accentColor || this.defaultAccent;
   }
 
   // Initialize component state
