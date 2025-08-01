@@ -22,9 +22,17 @@
     padding: tokens.$padding-header;
     margin-top: tokens.$margin-header;
 
-    &--small  { font-size: tokens.$font-size-small; font-weight: tokens.$font-size-small }
-    &--medium { font-size: tokens.$font-size-medium; font-weight: tokens.$font-weight-medium}
-    &--large  { font-size: tokens.$font-size-large;  font-weight: tokens.$font-weight-large}
+    // size variants
+    @mixin header-size($size, $font-size, $font-weight) {
+      &--#{$size} {
+        font-size: $font-size;
+        font-weight: $font-weight;
+      }
+    }
+
+    @include header-size(small, tokens.$font-size-small, tokens.$font-weight-small);
+    @include header-size(medium, tokens.$font-size-medium, tokens.$font-weight-medium);
+    @include header-size(large, tokens.$font-size-large, tokens.$font-weight-large);
 
     .card__menu-btn {
       background: none;
