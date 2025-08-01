@@ -12,6 +12,13 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+For dynamic toggling between accent colours, content. Please pass the following parameters via the url
+
+http://localhost:4200/card-green-large
+http://localhost:4200/card-grey-medium
+http://localhost:4200/card-blue-large-no-image
+http://localhost:4200/card-blue-large-no-header
+
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:

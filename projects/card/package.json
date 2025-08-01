@@ -1,9 +1,21 @@
 {
   "name": "card",
   "version": "0.0.1",
+  "description": "Reusable Wpay card component",
   "peerDependencies": {
     "@angular/common": "^20.1.0",
     "@angular/core": "^20.1.0"
+  },
+  "files": [
+    "bundles",
+    "esm2020",
+    "fesm2020",
+    "my-lib.d.ts",
+    "package.json",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "tslib": "^2.3.0"

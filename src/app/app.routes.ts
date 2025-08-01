@@ -5,7 +5,7 @@ export const routes: Routes = [
   {
     path: 'card-blue-small',
     loadChildren: () =>  import('@wpay-ui/card').then(m => m.CardModule),
-      data: { accentColor: '#084D63', headerSize: 'small', showHeader:  true,  showImage: true, showFooter: true }
+    data: { accentColor: '#084D63', headerSize: 'small', showHeader:  true,  showImage: true, showFooter: true }
   },
   {
     path: 'card-blue-large',
@@ -71,6 +71,11 @@ export const routes: Routes = [
     path: 'card-grey-small',
     loadChildren: () => import('@wpay-ui/card').then(m => m.CardModule),
     data: { accentColor: '#EBEBEB', headerSize: 'small',  showHeader:  true,  showImage: true, showFooter: true }
+  },
+  {
+    path: '',
+    loadChildren: () => import('@wpay-ui/card').then(m => m.CardModule),
+    data: { accentColor: '#084D63', headerSize: 'small', showHeader:  true,  showImage: true, showFooter: true }
   },
 ];
 
