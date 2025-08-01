@@ -15,8 +15,11 @@ Once the server is running, open your browser and navigate to `http://localhost:
 For dynamic toggling between accent colours, content. Please pass the following parameters via the url
 
 http://localhost:4200/card-green-large
+
 http://localhost:4200/card-grey-medium
+
 http://localhost:4200/card-blue-large-no-image
+
 http://localhost:4200/card-blue-large-no-header
 
 ## Code scaffolding
